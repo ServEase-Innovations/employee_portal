@@ -178,33 +178,32 @@ employee_portal/                    # Main monorepo
 
 ## 🏃 Running the Application
 
-### Option 1: Run Everything (Recommended for Development)
+### Option 1: Single Command (Recommended) ⚡
 
-Open **two separate terminal windows**:
+Start both backend and frontend with **one command**:
 
-**Terminal 1 - Backend:**
 ```bash
-cd employee_portal/NewPortal_BE
-npm run dev
-```
-
-You should see:
-```
-Server running on http://localhost:5000
-Swagger docs available at http://localhost:5000/api-docs
-```
-
-**Terminal 2 - Frontend:**
-```bash
-cd employee_portal/ServEase_portal
+cd employee_portal
 npm start
 ```
 
+**OR using the start script:**
+```bash
+cd employee_portal
+./start.sh
+```
+
+This will automatically:
+- Check and install dependencies if needed
+- Start the backend on http://localhost:5000
+- Start the frontend on http://localhost:3000
+- Show colored output for both services
+- Stop both services with a single Ctrl+C
+
 You should see:
 ```
-Compiled successfully!
-You can now view servease in the browser.
-  Local:            http://localhost:3000
+[BACKEND]  Server running on http://localhost:5000
+[FRONTEND] Compiled successfully!
 ```
 
 ### Option 2: Run Individual Components

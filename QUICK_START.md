@@ -47,6 +47,22 @@ npx prisma migrate deploy
 
 ## 🚀 Run the Application
 
+**Single Command - Start Everything:**
+```bash
+cd employee_portal
+npm start
+```
+
+**OR:**
+```bash
+cd employee_portal
+./start.sh
+```
+
+This starts both backend and frontend together! 🎉
+
+### Manual Start (Alternative)
+
 **Terminal 1 - Backend:**
 ```bash
 cd NewPortal_BE

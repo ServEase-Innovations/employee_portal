@@ -1,0 +1,31 @@
+{
+  "name": "employee-portal-monorepo",
+  "version": "1.0.0",
+  "description": "ServEase Employee Portal - Monorepo containing frontend and backend",
+  "private": true,
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "concurrently --kill-others-on-fail --prefix \"[{name}]\" --names \"BACKEND,FRONTEND\" --prefix-colors \"blue,green\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd NewPortal_BE && npm run dev",
+    "dev:frontend": "cd ServEase_portal && npm start",
+    "install:all": "npm install && cd NewPortal_BE && npm install && cd ../ServEase_portal && npm install && cd ..",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "cd NewPortal_BE && npm run build",
+    "build:frontend": "cd ServEase_portal && npm run build",
+    "prisma:generate": "cd NewPortal_BE && npx prisma generate",
+    "prisma:migrate": "cd NewPortal_BE && npx prisma migrate deploy",
+    "prisma:studio": "cd NewPortal_BE && npx prisma studio"
+  },
+  "keywords": [
+    "monorepo",
+    "employee-portal",
+    "react",
+    "express",
+    "typescript"
+  ],
+  "author": "ServEase Innovations",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
