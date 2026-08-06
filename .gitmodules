@@ -1,0 +1,6 @@
+[submodule "ServEase_portal"]
+	path = ServEase_portal
+	url = https://github.com/ServEase-Innovations/ServEase_portal.git
+[submodule "NewPortal_BE"]
+	path = NewPortal_BE
+	url = https://github.com/ServEase-Innovations/NewPortal_BE.git
