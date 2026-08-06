@@ -47,11 +47,19 @@ fi
 
 echo "✅ All dependencies ready!"
 echo ""
+
+# Read backend port from .env file, default to 5001 if not found
+BACKEND_PORT=5001
+if [ -f "NewPortal_BE/.env" ]; then
+    # Extract PORT value from .env file
+    BACKEND_PORT=$(grep -E "^PORT=" NewPortal_BE/.env | cut -d '=' -f2 | tr -d ' "' || echo "5001")
+fi
+
 echo "Starting applications..."
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "📱 Frontend: http://localhost:3000"
-echo "🔌 Backend:  http://localhost:5000"
-echo "📖 API Docs: http://localhost:5000/api-docs"
+echo "🔌 Backend:  http://localhost:${BACKEND_PORT}"
+echo "📖 API Docs: http://localhost:${BACKEND_PORT}/api-docs"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
 echo "Press Ctrl+C to stop all services"
