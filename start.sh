@@ -45,6 +45,25 @@ if [ ! -f "NewPortal_BE/.env" ]; then
     fi
 fi
 
+# Run database migrations
+echo "🗄️  Running database migrations..."
+cd NewPortal_BE
+if npx prisma migrate deploy 2>/dev/null; then
+    echo "✅ Database migrations applied successfully!"
+else
+    echo "⚠️  Failed to apply migrations. Database might not be accessible."
+    echo "   Please check your DATABASE_URL in .env file."
+    echo ""
+    read -p "Do you want to continue anyway? (y/N): " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        cd ..
+        exit 1
+    fi
+fi
+cd ..
+echo ""
+
 echo "✅ All dependencies ready!"
 echo ""
 echo "Starting applications..."
