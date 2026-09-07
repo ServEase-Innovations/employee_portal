@@ -181,7 +181,7 @@ Salary: ₹50,000/month
 
 For issues or questions:
 - Check `DEFAULT_LOGIN.md` in NewPortal_BE
-- Review API documentation at: http://localhost:50001/api-docs
+- Review API documentation at: http://localhost:4000/api-docs
 - Contact development team
 
 ---
